@@ -35,3 +35,21 @@ body {
     height: 20px;
     border: 1px solid black;
 }
+
+.resetbuttonclass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.resetbutton {
+    background-color: #121441;
+	color: white;
+}
+
+.resizebutton {
+     background-color: #121441;
+	color: white;   
+}
