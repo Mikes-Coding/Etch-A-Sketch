@@ -1,19 +1,25 @@
 const container = document.querySelector('.container');
+let size = 16;
 
-for (let i = 0; i < 16; i++) {
-  const row = document.createElement('div');
-  row.classList.add('row');
-  container.appendChild(row);
-  for (let j = 0; j < 16; j++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    row.appendChild(cell);
+function createGrid(size) {
+  container.innerHTML = '';
+  for (let i = 0; i < size; i++) {
+    const row = document.createElement('div');
+    row.classList.add('row');
+    container.appendChild(row);
+    for (let j = 0; j < size; j++) {
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      row.appendChild(cell);
 
-    cell.addEventListener('mouseover', function() {
-      cell.style.backgroundColor = 'black';
-    });
+      cell.addEventListener('mouseover', function() {
+        cell.style.backgroundColor = 'black';
+      });
+    }
   }
 }
+
+createGrid(size);
 
 const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', function() {
@@ -23,17 +29,9 @@ resetButton.addEventListener('click', function() {
   });
 });
 
-const addCellsButton = document.getElementById('add-cells-button');
-addCellsButton.addEventListener('click', function() {
-  const numCells = document.getElementById('num-cells').value;
-  if (numCells >= 0 && numCells <= 100) {
-    const container = document.querySelector('.container');
-    for (let i = 0; i < numCells; i++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
-      container.appendChild(cell);
-    }
-  } else {
-    alert('Please enter a number between 0 and 100');
-  }
+const submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', function() {
+  const input = document.getElementById('grid-size');
+  gridSize = input.value;
+  createGrid(size);
 });

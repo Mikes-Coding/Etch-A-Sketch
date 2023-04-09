@@ -19,11 +19,17 @@
         <button id="button4" class="button">Colour Select</button>
     </div>
 
-    <div class="container"></div>
+    <div class="container-wrapper">
+        <div class="container">
+        </div>
+    </div>
 
     <div class="resetbuttonclass">
         <button id="reset" class="resetbutton">Clear</button>
-        <button id="add-cells-button" class="resizebutton">New Gird Size</button>
+        <div class="resize">
+            <input type="number" id="grid-size" min="0" max="100" placeholder="Enter grid size">
+            <button id="submit" class="resizebutton">New Grid Size</button>
+        </div>
     </div>
 
 </body>
